@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>SabzLearn | Js | 184</title>
+  </head>
+
+  <body>
+    <!-- modal -->
+    <div class="modal " id="todo_form">
+      <div class="header">
+        <div class="title">Add Todo</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="body">
+        <input type="text" id="todo_input" />
+        <input type="submit" value="Add Todo" id="todo_submit" />
+      </div>
+    </div>
+
+    <!-- overlay (پس‌زمینه خاکستری پشت مودال) -->
+    <div id="overlay"></div>
+
+    <!-- todo -->
+    <div class="todo-container">
+      <div class="status" id="no_status">
+        <h1>No Status</h1>
+        <button id="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
+        <div id="Pizza" class="todo" draggable="true" ondragstart="dragStartHandler(event)">
+          Buy a Pizza
+          <span class="close">&times;</span>
+        </div>
+      </div>
+
+      <div class="status" id="not_started" ondrop="dropHandler(event)" ondragover="dropOverHandler(event)">
+        <h1>Not Started</h1>
+      </div>
+
+      <div class="status" id="in_progress" ondrop="dropHandler(event)" ondragover="dropOverHandler(event)">
+        <h1>In Progress</h1>
+      </div>
+
+      <div class="status" id="completed" ondrop="dropHandler(event)" ondragover="dropOverHandler(event)">
+        <h1>Completed</h1>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
